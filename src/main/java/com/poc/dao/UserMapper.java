@@ -1,5 +1,7 @@
 package com.poc.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -14,7 +16,7 @@ public interface UserMapper extends BaseDao{
 	public int insert(User user);
 	
 	@Select(SELECT_USER)
-	public User fetch(User user);
+	public List<User> fetch(User user);
 	
 	@Delete(DELETE_USER)
 	public int delete(User user);

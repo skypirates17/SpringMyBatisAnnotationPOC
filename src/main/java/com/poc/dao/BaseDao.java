@@ -14,8 +14,11 @@ public interface BaseDao {
 	
 	static final String DELETE_USER = "delete from student_info WHERE student_id = #{id}";
 	
-	static final String SELECT_USER = "select student_name as name, student_age as age,student_address as address from student_info where "+
-			"student_id = #{id}";
+	static final String SELECT_USER = "<script>"+
+			"select student_name as name, student_age as age,student_address as address from student_info"+
+			//"student_id = #{id}"+
+			"<if test='age != null'>where  student_age = #{age}</if>"+
+			"</script>";
 	//	Queries for UserMapper
 	
 }

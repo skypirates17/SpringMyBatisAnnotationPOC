@@ -1,5 +1,7 @@
 package com.poc.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +26,8 @@ public class UserServiceImpl extends BaseService implements UserService{
 	public DataTransferObject fetch(DataTransferObject dto) {
 		// TODO Auto-generated method stub
 		DataTransferObject returnDTO = new DataTransferObject();
-		User user = userMapper.fetch(dto.getUser());
-		returnDTO.setUser(user);
+		List<User> user = userMapper.fetch(dto.getUser());
+		returnDTO.setListUser(user);
 		return returnDTO;
 	}
 

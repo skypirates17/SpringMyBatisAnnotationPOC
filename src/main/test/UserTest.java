@@ -20,17 +20,21 @@ public class UserTest {
 		userService = null;
 	}
 	
-
+	@Test
 	public void testSingleCRUD() {
 		//test insert single record
 		DataTransferObject dto = new DataTransferObject();
 		User user = new User();
-		user.setId(33);
+		user.setAge("56");
 		dto.setUser(user);
 		
 		DataTransferObject dtoresponse = userService.fetch(dto);
 		
-		System.out.println(dtoresponse.getUser().getAddress()+dtoresponse.getUser().getAge()+dtoresponse.getUser().getName());
+		for(User u: dtoresponse.getListUser()){
+			System.out.println(u.getAddress()+u.getAge()+u.getName());
+		}
+		
+
 	}
 	
 
@@ -46,7 +50,7 @@ public class UserTest {
 		userService.update(dto);
 	}
 	
-	@Test
+
 	public void testinsert(){
 		DataTransferObject dto = new DataTransferObject();
 		User user = new User();
