@@ -34,7 +34,6 @@ public class UserTest {
 			System.out.println(u.getAddress()+u.getAge()+u.getName());
 		}
 		
-
 	}
 	
 
